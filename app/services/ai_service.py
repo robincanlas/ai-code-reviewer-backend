@@ -1,10 +1,12 @@
 import os
 from dotenv import load_dotenv
+import requests
 
 load_dotenv()
 
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/generate")
 MODEL = os.getenv("MODEL", "deepseek-coder")
+
 
 def review_code(code: str, language: str) -> str:
     prompt = f"""
